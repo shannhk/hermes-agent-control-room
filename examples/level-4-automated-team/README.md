@@ -8,7 +8,6 @@ Add:
 - security audits
 - backup checks
 - weekly reports
-- result review loops
 - optional direct gateway/API calls
 
 Automation should follow the Agent Control Room, not replace it.
