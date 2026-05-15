@@ -1,0 +1,29 @@
+agents:
+  hermes-seo:
+    role: SEO specialist
+    docs: /root/vps-agents/agents/hermes-seo
+    data_dir: /srv/hermes-seo/data
+    task_queue: /srv/agent-bus/tasks/seo
+    gateway_url: http://127.0.0.1:8643
+    dashboard_url: http://127.0.0.1:9120
+    allowed_work:
+      - technical SEO audits
+      - content briefs
+      - search analytics
+    forbidden_work:
+      - destructive repository operations without approval
+      - credential rotation without approval
+
+  hermes-dev:
+    role: Code and site specialist
+    docs: /root/vps-agents/agents/hermes-dev
+    data_dir: /srv/hermes-dev/data
+    task_queue: /srv/agent-bus/tasks/dev
+    gateway_url: http://127.0.0.1:8646
+    dashboard_url: http://127.0.0.1:9123
+    allowed_work:
+      - code changes
+      - debugging
+      - pull requests
+    forbidden_work:
+      - production deploys without approval

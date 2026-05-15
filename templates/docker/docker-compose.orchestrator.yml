@@ -1,0 +1,20 @@
+services:
+  hermes-orchestrator:
+    image: nousresearch/hermes-agent:latest
+    container_name: hermes-orchestrator
+    restart: unless-stopped
+    command: gateway run
+    ports:
+      - "127.0.0.1:8644:8642"
+      - "127.0.0.1:9121:9119"
+    volumes:
+      - /srv/hermes-orchestrator/data:/opt/data
+      - /srv/agent-bus:/srv/agent-bus
+      - /root/vps-agents:/root/vps-agents:ro
+    environment:
+      - HERMES_DASHBOARD=1
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: "2.0"
